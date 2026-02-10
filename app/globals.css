@@ -50,8 +50,39 @@
   50% { transform: translateY(-10px); }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background-color: #f9fafb;
+  background-color: #062923;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar for dark theme */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #062923;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1a4a3f;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2a6a5f;
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #1a4a3f #062923;
 }
 
 .animation-delay-200 {
