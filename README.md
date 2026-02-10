@@ -23,8 +23,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
 ## Developing
 
 ### Built With
@@ -87,15 +85,6 @@ Alternatively, connect your GitHub repository to Vercel for automatic deployment
 ## Versioning
 
 This project uses [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/ManoGuzman/wedding-invitation/tags).
-
-## Configuration
-
-The application can be configured through environment variables:
-
-- `NEXT_PUBLIC_WEDDING_DATE` - The wedding date for countdown timer
-- `NEXT_PUBLIC_VENUE_NAME` - Wedding venue name
-- `NEXT_PUBLIC_VENUE_ADDRESS` - Wedding venue address
-- Additional configuration can be added to `.env.local` for local development
 
 ## Tests
 
