@@ -17,11 +17,6 @@ const handwrittenFont = localFont({
       weight: '400',
       style: 'normal',
     },
-    {
-      path: './fonts/BetterYesterday-Bold.otf',
-      weight: '700',
-      style: 'normal',
-    }
   ],
   variable: '--font-handwritten',
 })
