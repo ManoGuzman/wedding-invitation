@@ -2,9 +2,9 @@ name: CI
 
 on:
   push:
-    branches: [master, feature-spa, feature-frontend]
+    branches: [master, feature-frontend]
   pull_request:
-    branches: [master, feature-spa, feature-frontend]
+    branches: [master, feature-frontend]
 
 jobs:
   build:
