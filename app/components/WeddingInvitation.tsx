@@ -14,6 +14,7 @@ import GiftsSection from "./sections/GiftsSection";
 import SinpeSection from "./sections/SinpeSection";
 import RsvpSection from "./sections/RsvpSection";
 import ThankYouSection from "./sections/ThankYouSection";
+import CountdownSection from "./sections/CountdownSection";
 
 const WeddingInvitation = (props: SVGProps<SVGSVGElement>) => (
     <svg
@@ -29,6 +30,7 @@ const WeddingInvitation = (props: SVGProps<SVGSVGElement>) => (
         <g transform="translate(2062.672 -1551.587)">
             <BackgroundSection />
             <HeroSection />
+            <CountdownSection />
             <NamesSection />
             <CeremonySection />
             <ReceptionSection />
