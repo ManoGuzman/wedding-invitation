@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import WeddingInvitation from './components/WeddingInvitation'
 
-const SECTIONS = 13
+const SECTIONS = 9
 
 export default function Home() {
   return (
