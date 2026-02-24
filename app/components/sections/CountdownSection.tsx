@@ -1,3 +1,4 @@
+// app/components/sections/CountdownSection.tsx
 import React, { useEffect, useState } from "react";
 
 const targetDate = new Date("2026-04-18T15:00:00"); // Set your wedding date/time here
@@ -14,8 +15,15 @@ const getTimeLeft = () => {
     return { days, hours, minutes, seconds };
 };
 
+const textStyle = {
+    fontFamily: "serif",
+    fill: "#e5e5e5",
+    fillOpacity: 1,
+    textAnchor: "middle" as const,
+};
+
 const CountdownSection: React.FC = () => {
-    const [timeLeft, setTimeLeft] = useState<{ days: number, hours: number, minutes: number, seconds: number }>(getTimeLeft);
+    const [timeLeft, setTimeLeft] = useState<ReturnType<typeof getTimeLeft> | null>(null);
 
     useEffect(() => {
         const timer = setInterval(() => {
@@ -24,22 +32,56 @@ const CountdownSection: React.FC = () => {
         return () => clearInterval(timer);
     }, []);
 
+    const values = timeLeft
+        ? [
+            { label: "Días", value: timeLeft.days },
+            { label: "Horas", value: timeLeft.hours },
+            { label: "Minutos", value: timeLeft.minutes },
+            { label: "Segundos", value: timeLeft.seconds },
+        ]
+        : [
+            { label: "Días", value: "--" },
+            { label: "Horas", value: "--" },
+            { label: "Minutos", value: "--" },
+            { label: "Segundos", value: "--" },
+        ];
+
+    const baseX = 157;
+    const baseY = 1060;
+    const spacing = 55;
+    const startX = baseX - (spacing * 1.5);
+
     return (
-        <section className="bg-gray-700 text-gray-200 text-center py-12 font-serif">
-            <div className="text-5xl font-bold mb-6">FALTAN</div>
-            <div className="flex justify-center gap-12 mb-4">
-                <div className="text-7xl font-bold">{timeLeft.days}</div>
-                <div className="text-7xl font-bold">{timeLeft.hours}</div>
-                <div className="text-7xl font-bold">{timeLeft.minutes}</div>
-                <div className="text-7xl font-bold">{timeLeft.seconds}</div>
-            </div>
-            <div className="flex justify-center gap-12 text-2xl">
-                <div>Días</div>
-                <div>horas</div>
-                <div>minutos</div>
-                <div>segundos</div>
-            </div>
-        </section>
+        <g>
+            <text
+                xmlSpace="preserve"
+                x={baseX}
+                y={baseY}
+                style={{ ...textStyle, fontSize: "22px", fontWeight: "bold" }}
+            >
+                {"FALTAN"}
+            </text>
+            {values.map((item, i) => (
+                <g key={item.label}>
+                    <text
+                        xmlSpace="preserve"
+                        x={startX + i * spacing}
+                        y={baseY + 40}
+                        style={{ ...textStyle, fontSize: "28px", fontWeight: "bold" }}
+                    >
+                        {String(item.value)}
+                    </text>
+                    <text
+                        xmlSpace="preserve"
+                        x={startX + i * spacing}
+                        y={baseY + 58}
+                        style={{ ...textStyle, fontSize: "12px" }}
+                    >
+                        {item.label}
+                    </text>
+                </g>
+            ))}
+        </g>
     );
 };
 

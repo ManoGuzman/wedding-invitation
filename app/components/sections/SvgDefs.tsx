@@ -12,6 +12,8 @@ const SvgDefs = () => (
             <feGaussianBlur stdDeviation={0.079} />
         </filter>
     </defs>
+
+
 );
 
 export default SvgDefs;
