@@ -1,7 +1,7 @@
 // app/components/sections/CountdownSection.tsx
 import React, { useEffect, useState } from "react";
 
-const targetDate = new Date("2026-04-18T15:00:00"); // Set your wedding date/time here
+const targetDate = new Date("2026-04-18T14:30:00"); // Set your wedding date/time here
 
 const getTimeLeft = () => {
     const now = new Date();
@@ -16,7 +16,7 @@ const getTimeLeft = () => {
 };
 
 const textStyle = {
-    fontFamily: "serif",
+    fontFamily: "var(--font-cormorant-garamond)",
     fill: "#e5e5e5",
     fillOpacity: 1,
     textAnchor: "middle" as const,
@@ -46,18 +46,17 @@ const CountdownSection: React.FC = () => {
             { label: "Segundos", value: "--" },
         ];
 
-    const baseX = 157;
-    const baseY = 1060;
-    const spacing = 55;
-    const startX = baseX - (spacing * 1.5);
+    const baseX = 62.229;
+    const baseY = 874.257;
+    const spacing = 60;
 
     return (
         <g>
             <text
                 xmlSpace="preserve"
-                x={baseX}
-                y={baseY}
-                style={{ ...textStyle, fontSize: "22px", fontWeight: "bold" }}
+                x={153.229}
+                y={857.143}
+                style={{ ...textStyle, fontSize: "32px", fontWeight: 700 }}
             >
                 {"FALTAN"}
             </text>
@@ -65,17 +64,17 @@ const CountdownSection: React.FC = () => {
                 <g key={item.label}>
                     <text
                         xmlSpace="preserve"
-                        x={startX + i * spacing}
-                        y={baseY + 40}
-                        style={{ ...textStyle, fontSize: "28px", fontWeight: "bold" }}
+                        x={baseX + i * spacing}
+                        y={baseY + 30}
+                        style={{ ...textStyle, fontSize: "48px", fontWeight: 700 }}
                     >
                         {String(item.value)}
                     </text>
                     <text
                         xmlSpace="preserve"
-                        x={startX + i * spacing}
-                        y={baseY + 58}
-                        style={{ ...textStyle, fontSize: "12px" }}
+                        x={baseX + i * spacing}
+                        y={baseY + 62}
+                        style={{ ...textStyle, fontSize: "16px", fontWeight: 700 }}
                     >
                         {item.label}
                     </text>
