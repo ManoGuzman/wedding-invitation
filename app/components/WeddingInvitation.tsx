@@ -5,15 +5,13 @@ import type { SVGProps } from "react";
 import SvgDefs from "./sections/SvgDefs";
 import BackgroundSection from "./sections/BackgroundSection";
 import HeroSection from "./sections/HeroSection";
-import NamesSection from "./sections/NamesSection";
 import CeremonySection from "./sections/CeremonySection";
 import ReceptionSection from "./sections/ReceptionSection";
 import DressCodeSection from "./sections/DressCodeSection";
-import DateDetailsSection from "./sections/DateDetailsSection";
-import GiftsSection from "./sections/GiftsSection";
-import SinpeSection from "./sections/SinpeSection";
+import PresentSection from "./sections/PresentSection";
 import RsvpSection from "./sections/RsvpSection";
-import ThankYouSection from "./sections/ThankYouSection";
+import CountdownSection from "./sections/CountdownSection";
+import DateSection from "./sections/DateSection";
 
 const WeddingInvitation = (props: SVGProps<SVGSVGElement>) => (
     <svg
@@ -21,23 +19,21 @@ const WeddingInvitation = (props: SVGProps<SVGSVGElement>) => (
         xmlnsXlink="http://www.w3.org/1999/xlink"
         xmlSpace="preserve"
         width={1190.001}
-        height={12806.838}
-        viewBox="0 0 314.854 3388.476"
+        height={13393.816}
+        viewBox="0 0 314.854 3543.78"
         {...props}
     >
         <SvgDefs />
-        <g transform="translate(2062.672 -1551.587)">
+        <g>
             <BackgroundSection />
             <HeroSection />
-            <NamesSection />
+            <DateSection />
+            <CountdownSection />
             <CeremonySection />
             <ReceptionSection />
             <DressCodeSection />
-            <DateDetailsSection />
-            <GiftsSection />
-            <SinpeSection />
+            <PresentSection />
             <RsvpSection />
-            <ThankYouSection />
         </g>
     </svg>
 );

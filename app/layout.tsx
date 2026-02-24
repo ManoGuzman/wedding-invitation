@@ -5,12 +5,13 @@ import './globals.css'
 
 const cormorantGaramond = Cormorant_Garamond({
   weight: ['300', '400', '500', '600', '700'],
+  style: ['normal', 'italic'],
   subsets: ['latin'],
   variable: '--font-cormorant-garamond',
 })
 
 // Add your local fonts
-const handwrittenFont = localFont({
+const betterYesterday = localFont({
   src: [
     {
       path: './fonts/Better Yesterday.otf',
@@ -18,10 +19,10 @@ const handwrittenFont = localFont({
       style: 'normal',
     },
   ],
-  variable: '--font-handwritten',
+  variable: '--font-better-yesterday',
 })
 
-const appleGaramondFont = localFont({
+const appleGaramond = localFont({
   src: [
     {
       path: './fonts/AppleGaramond-Bold.ttf',
@@ -44,7 +45,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body className={`${cormorantGaramond.variable} ${handwrittenFont.variable} ${appleGaramondFont.variable}`}>{children}</body>
+      <body className={`${cormorantGaramond.variable} ${betterYesterday.variable} ${appleGaramond.variable}`}>{children}</body>
     </html>
   )
 }

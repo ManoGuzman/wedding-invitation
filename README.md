@@ -1,6 +1,7 @@
+# Wedding Invitation &middot; [![Build Status](https://img.shields.io/travis/npm/npm/latest.svg?style=flat-square)](https://travis-ci.org/npm/npm) [![pnpm](https://img.shields.io/badge/pnpm-10.28.2-blue)](https://www.npmjs.com/package/pnpm) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/ManoGuzman/wedding-invitation/blob/master/LICENSE)
+
 <img src="https://img.icons8.com/?size=100&id=COr5WfRd65V3&format=png&color=000000" alt="Wedding Ring" align="right">
 
-# Wedding Invitation &middot; [![Build Status](https://img.shields.io/travis/npm/npm/latest.svg?style=flat-square)](https://travis-ci.org/npm/npm) [![pnpm](https://img.shields.io/badge/pnpm-10.28.2-blue)](https://www.npmjs.com/package/pnpm) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/ManoGuzman/wedding-invitation/blob/master/LICENSE)
 > Create unique invitation experiences with personalized URLs for each guest
 
 Modern wedding invitation SPA built with Next.js - personalized invites per guest with animated countdown.
@@ -26,16 +27,19 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 ## Developing
 
 ### Built With
+
 - [Next.js](https://nextjs.org/) - React framework for production
 - [React](https://reactjs.org/) - UI library
 - [TypeScript](https://www.typescriptlang.org/) - Type-safe JavaScript
 - [pnpm 10.28.2](https://pnpm.io/) - Fast, disk space efficient package manager
 
 ### Prerequisites
+
 - [Node.js](https://nodejs.org/) (v18 or higher recommended)
 - [pnpm](https://pnpm.io/installation) (v10.28.2)
 
 Install pnpm globally if you don't have it:
+
 ```bash
 npm install -g pnpm@10.28.2
 ```
@@ -70,17 +74,28 @@ pnpm start
 
 ### Deploying / Publishing
 
-This project is optimized for deployment on [Vercel](https://vercel.com):
+This project is optimized for deployment on [Netlify](https://www.netlify.com/):
 
 ```shell
-# Install Vercel CLI
-pnpm add -g vercel
+# install the Netlify CLI if you don't have it
+pnpm add -g netlify-cli
 
-# Deploy to production
-vercel --prod
+# build the app locally
+pnpm build
+
+# initialize or link a site (run once)
+netlify init
+
+# deploy the production build
+# if you're exporting a static version, use --dir=out
+# otherwise point to .next
+netlify deploy --prod --dir=.next
 ```
 
-Alternatively, connect your GitHub repository to Vercel for automatic deployments on every push to the main branch.
+You can also connect the GitHub repository in the Netlify dashboard and
+configure the build command (`pnpm build`) and publish directory
+(`.next` or `out` depending on your setup) for automatic deployments on
+every push to the main branch.
 
 ## Versioning
 
@@ -95,6 +110,7 @@ pnpm test
 ```
 
 Tests cover:
+
 - Component rendering
 - Personalized URL routing
 - Countdown timer functionality

@@ -2,7 +2,7 @@
 
 @theme {
   --font-family-cormorant: var(--font-cormorant-garamond);
-  --font-family-handwritten: var(--font-handwritten);
+  --font-family-better: var(--font-better-yesterday);
   
   --animate-fade-in: fadeIn 1s ease-in;
   --animate-fade-in-up: fadeInUp 1s ease-out;
