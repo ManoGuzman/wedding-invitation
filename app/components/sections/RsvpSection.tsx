@@ -3,6 +3,98 @@ const RsvpSection = () => (
     <>
         <text
             xmlSpace="preserve"
+            x={99.054}
+            y={3200.068}
+            style={{
+                fontSize: "119.518px",
+                fontFamily: "var(--font-apple-garamond)",
+                fontVariationSettings: "&quot",
+                textAlign: "center",
+                textAnchor: "middle",
+                fill: "#e5e5e5",
+                fillOpacity: 1,
+                strokeWidth: 2.5162,
+                strokeLinecap: "round",
+                strokeLinejoin: "round",
+            }}
+        >
+            <tspan
+                x={99.054}
+                y={3200.068}
+                style={{
+                    fontStyle: "normal",
+                    fontVariant: "normal",
+                    fontWeight: 400,
+                    fontStretch: "normal",
+                    fontSize: "119.518px",
+                    fontFamily: "var(--font-apple-garamond)",
+                    fill: "#e5e5e5",
+                    fillOpacity: 1,
+                    strokeWidth: 2.5162,
+                }}
+            >
+                {"1"}
+            </tspan>
+        </text>
+        <text
+            xmlSpace="preserve"
+            x={135.905}
+            y={3176.742}
+            style={{
+                fontSize: "19.0122px",
+                lineHeight: 1,
+                fontFamily: "var(--font-cormorant-garamond)",
+                fontVariationSettings: "&quot",
+                textAlign: "center",
+                textAnchor: "middle",
+                fill: "#e5e5e5",
+                fillOpacity: 1,
+                strokeWidth: 0.400259,
+                strokeLinecap: "round",
+                strokeLinejoin: "round",
+            }}
+        >
+            <tspan
+                x={135.905}
+                y={3176.742}
+                style={{
+                    fontStyle: "normal",
+                    fontVariant: "normal",
+                    fontWeight: 600,
+                    fontStretch: "normal",
+                    fontSize: "19.0122px",
+                    fontFamily: "var(--font-cormorant-garamond)",
+                    textAlign: "start",
+                    textAnchor: "start",
+                    fill: "#e5e5e5",
+                    fillOpacity: 1,
+                    strokeWidth: 0.400259,
+                }}
+            >
+                {"NOMBRE"}
+            </tspan>
+            <tspan
+                x={135.905}
+                y={3196.001}
+                style={{
+                    fontStyle: "normal",
+                    fontVariant: "normal",
+                    fontWeight: 600,
+                    fontStretch: "normal",
+                    fontSize: "19.0122px",
+                    fontFamily: "var(--font-cormorant-garamond)",
+                    textAlign: "start",
+                    textAnchor: "start",
+                    fill: "#e5e5e5",
+                    fillOpacity: 1,
+                    strokeWidth: 0.400259,
+                }}
+            >
+                {"APELLIDO"}
+            </tspan>
+        </text>
+        <text
+            xmlSpace="preserve"
             x={130.905}
             y={3136.742}
             style={{
@@ -56,41 +148,6 @@ const RsvpSection = () => (
                 }}
             >
                 {"TU HONOR,"}
-            </tspan>
-        </text>
-        <text
-            xmlSpace="preserve"
-            x={99.054}
-            y={3200.068}
-            style={{
-                fontSize: "119.518px",
-                fontFamily: "var(--font-apple-garamond)",
-                fontVariationSettings: "&quot",
-                textAlign: "center",
-                textAnchor: "middle",
-                fill: "#e5e5e5",
-                fillOpacity: 1,
-                strokeWidth: 2.5162,
-                strokeLinecap: "round",
-                strokeLinejoin: "round",
-            }}
-        >
-            <tspan
-                x={99.054}
-                y={3200.068}
-                style={{
-                    fontStyle: "normal",
-                    fontVariant: "normal",
-                    fontWeight: 400,
-                    fontStretch: "normal",
-                    fontSize: "119.518px",
-                    fontFamily: "var(--font-apple-garamond)",
-                    fill: "#e5e5e5",
-                    fillOpacity: 1,
-                    strokeWidth: 2.5162,
-                }}
-            >
-                {"1"}
             </tspan>
         </text>
         <text
