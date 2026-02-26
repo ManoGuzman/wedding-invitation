@@ -1,100 +1,136 @@
+# Wedding Invitation &middot; [![Build Status](https://img.shields.io/travis/npm/npm/latest.svg?style=flat-square)](https://travis-ci.org/npm/npm) [![pnpm](https://img.shields.io/badge/pnpm-10.28.2-blue)](https://www.npmjs.com/package/pnpm) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/ManoGuzman/wedding-invitation/blob/master/LICENSE)
+
 <img src="https://img.icons8.com/?size=100&id=COr5WfRd65V3&format=png&color=000000" alt="Wedding Ring" align="right">
 
-# Wedding Invitation &middot; [![Build Status](https://img.shields.io/travis/npm/npm/latest.svg?style=flat-square)](https://travis-ci.org/npm/npm) [![npm](https://img.shields.io/npm/v/npm.svg?style=flat-square)](https://www.npmjs.com/package/npm) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/your/your-project/blob/master/LICENSE)
-> Additional information or tag line
+> Create unique invitation experiences with personalized URLs for each guest
 
-A brief description of your project, what it is used for.
+Modern wedding invitation SPA built with Next.js - personalized invites per guest with animated countdown.
 
 ## Installing / Getting started
 
-A quick introduction of the minimal setup you need to get a hello world up &
-running.
+First, install dependencies:
 
-```shell
-commands here
+```bash
+pnpm install
 ```
 
-Here you should say what actually happens when you execute the code above.
+Then, run the development server:
+
+```bash
+pnpm dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 ## Developing
 
 ### Built With
-List main libraries, frameworks used including versions (React, Angular etc...)
+
+- [Next.js](https://nextjs.org/) - React framework for production
+- [React](https://reactjs.org/) - UI library
+- [TypeScript](https://www.typescriptlang.org/) - Type-safe JavaScript
+- [pnpm 10.28.2](https://pnpm.io/) - Fast, disk space efficient package manager
 
 ### Prerequisites
-What is needed to set up the dev environment. For instance, global dependencies or any other tools. include download links.
 
+- [Node.js](https://nodejs.org/) (v18 or higher recommended)
+- [pnpm](https://pnpm.io/installation) (v10.28.2)
+
+Install pnpm globally if you don't have it:
+
+```bash
+npm install -g pnpm@10.28.2
+```
 
 ### Setting up Dev
 
-Here's a brief intro about what a developer must do in order to start developing
-the project further:
+Clone the repository and install dependencies:
 
 ```shell
-git clone https://github.com/your/your-project.git
-cd your-project/
-packagemanager install
+git clone https://github.com/ManoGuzman/wedding-invitation.git
+cd wedding-invitation/
+pnpm install
 ```
 
-And state what happens step-by-step. If there is any virtual environment, local server or database feeder needed, explain here.
+Create a `.env.local` file in the root directory for local environment variables if needed.
 
 ### Building
 
-If your project needs some additional steps for the developer to build the
-project after some code changes, state them here. for example:
+To create a production build:
 
 ```shell
-./configure
-make
-make install
+pnpm build
 ```
 
-Here again you should state what actually happens when the code above gets
-executed.
+This will generate an optimized production build in the `.next` directory.
+
+To preview the production build locally:
+
+```shell
+pnpm start
+```
 
 ### Deploying / Publishing
-give instructions on how to build and release a new version
-In case there's some step you have to take that publishes this project to a
-server, this is the right time to state it.
+
+This project is optimized for deployment on [Netlify](https://www.netlify.com/):
 
 ```shell
-packagemanager deploy your-project -s server.com -u username -p password
+# install the Netlify CLI if you don't have it
+pnpm add -g netlify-cli
+
+# build the app locally
+pnpm build
+
+# initialize or link a site (run once)
+netlify init
+
+# deploy the production build
+# if you're exporting a static version, use --dir=out
+# otherwise point to .next
+netlify deploy --prod --dir=.next
 ```
 
-And again you'd need to tell what the previous code actually does.
+You can also connect the GitHub repository in the Netlify dashboard and
+configure the build command (`pnpm build`) and publish directory
+(`.next` or `out` depending on your setup) for automatic deployments on
+every push to the main branch.
 
 ## Versioning
 
-We can maybe use [SemVer](http://semver.org/) for versioning. For the versions available, see the [link to tags on this repository](/tags).
-
-
-## Configuration
-
-Here you should write what are all of the configurations a user can enter when using the project.
+This project uses [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/ManoGuzman/wedding-invitation/tags).
 
 ## Tests
 
-Describe and show how to run the tests with code examples.
-Explain what these tests test and why.
+Currently, the project uses Next.js built-in testing capabilities. To run tests:
 
 ```shell
-Give an example
+pnpm test
 ```
+
+Tests cover:
+
+- Component rendering
+- Personalized URL routing
+- Countdown timer functionality
 
 ## Style guide
 
-Explain your code style and show how to check it.
+This project follows the [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript) with TypeScript conventions.
 
-## Api Reference
+To check code formatting:
 
-If the api is external, link to api documentation. If not describe your api including authentication methods as well as explaining all the endpoints with their required parameters.
+```shell
+pnpm lint
+```
 
+To automatically fix formatting issues:
 
-## Database
-
-Explaining what database (and version) has been used. Provide download links.
-Documents your database design and schemas, relations etc... 
+```shell
+pnpm lint:fix
+```
 
 ## Licensing
 
-State what the license is and how to find the text version of the license.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/ManoGuzman/wedding-invitation/blob/master/LICENSE) file for details.
