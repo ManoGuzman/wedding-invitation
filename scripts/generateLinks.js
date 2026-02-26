@@ -6,13 +6,16 @@
 import { readFileSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
+import 'dotenv/config';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const guestsData = JSON.parse(readFileSync(join(__dirname, '../app/data/guests.json'), 'utf-8'));
 
 const BASE_URL = process.env.NETLIFY_URL;
 
+const sanitizedBase = BASE_URL.trim().replace(/;$/, '').replace(/\/$/, '');
+
 guestsData.guests.forEach(guest => {
-  const url = `${BASE_URL}/${guest.id}`;
+  const url = `${sanitizedBase}/${guest.id}`;
   console.log(`${guest.name}: ${url}`);
 });
