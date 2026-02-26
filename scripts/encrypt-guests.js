@@ -1,5 +1,7 @@
 /**
- * This script reads the guests.json file, encrypts the names using AES-256-CBC, and saves the encrypted data to guests.encrypted.json. The IV is also saved in the output file for later decryption.
+ * This script reads the guests.json file, encrypts the names using AES-256-CBC,
+ * and saves the encrypted data to guests.encrypted.json in the app/data folder.
+ * The IV is also saved in the output file for later decryption.
  */
 import { readFileSync, writeFileSync } from 'fs';
 import { createCipheriv, randomBytes, scryptSync } from 'crypto';
@@ -9,15 +11,15 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const algorithm = 'aes-256-cbc';
-const password = 'My$up3rS3cretP@ssw0rd';
+const algorithm = process.env.ALGORITHM;
+const password = process.env.PASSWORD;
 const salt = 'salt';
 const keyLength = 32;
 const key = scryptSync(password, salt, keyLength);
 const iv = randomBytes(16);
 
-const guestsPath = path.join(__dirname, '../public/guests.json');
-const outputPath = path.join(__dirname, '../public/guests.encrypted.json');
+const guestsPath = path.join(__dirname, '../app/data/guests.json');
+const outputPath = path.join(__dirname, '../app/data/guests.encrypted.json');
 
 /**
  * Encrypt function that takes the original text and returns the encrypted text
@@ -51,6 +53,7 @@ function writeJSON(filePath, data) {
  */
 const guestsData = readJSON(guestsPath);
 const encryptedGuests = guestsData.guests.map(guest => ({
+    id: guest.id,
     name: encrypt(guest.name),
     amount: guest.amount
 }));
@@ -60,4 +63,4 @@ writeJSON(outputPath, {
     guests: encryptedGuests
 });
 
-console.log('Names encrypted and saved to guests.encrypted.json');
+console.log('Names encrypted and saved to app/data/guests.encrypted.json');

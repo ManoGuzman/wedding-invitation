@@ -11,14 +11,14 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const algorithm = 'aes-256-cbc';
-const password = 'My$up3rS3cretP@ssw0rd';
+const algorithm = process.env.ALGORITHM;
+const password = process.env.PASSWORD;
 const salt = 'salt';
 const keyLength = 32;
 const key = scryptSync(password, salt, keyLength);
 
-const encryptedPath = path.join(__dirname, '../public/guests.encrypted.json');
-const outputPath = path.join(__dirname, '../public/guests.decrypted.json');
+const encryptedPath = path.join(__dirname, '../app/data/guests.encrypted.json');
+const outputPath = path.join(__dirname, '../app/data/guests.decrypted.json');
 
 /** Decrypt function that takes the encrypted text and IV, and returns the decrypted text
  * @param {*} text 
@@ -52,6 +52,7 @@ const encryptedData = readJSON(encryptedPath);
 const iv = Buffer.from(encryptedData.iv, 'hex');
 
 const decryptedGuests = encryptedData.guests.map(guest => ({
+    id: guest.id,
     name: decrypt(guest.name, iv),
     amount: guest.amount
 }));
@@ -60,4 +61,4 @@ writeJSON(outputPath, {
     guests: decryptedGuests
 });
 
-console.log('Names decrypted and saved to guests.decrypted.json');
+console.log('Names decrypted and saved to app/data/guests.decrypted.json');
