@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
-@theme {
+:root {
   --font-family-cormorant: var(--font-cormorant-garamond);
   --font-family-better: var(--font-better-yesterday);
-  
+
   --animate-fade-in: fadeIn 1s ease-in;
   --animate-fade-in-up: fadeInUp 1s ease-out;
   --animate-fade-in-down: fadeInDown 1s ease-out;
@@ -11,7 +11,7 @@
   --animate-slide-in-left: slideInLeft 1s ease-out;
   --animate-slide-in-right: slideInRight 1s ease-out;
   --animate-float: float 3s ease-in-out infinite;
-  
+
   --color-gray-50: #f9fafb;
 }
 
@@ -52,11 +52,15 @@
 
 html {
   scroll-behavior: smooth;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 body {
+  min-height: 100%;
+  overflow: hidden;
   background-color: #062923;
-  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
