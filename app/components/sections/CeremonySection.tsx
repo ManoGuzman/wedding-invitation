@@ -130,7 +130,7 @@ const CeremonySection = () => (
             style={{ fill: "#e5e5e5", fillOpacity: 1, strokeWidth: 0.600485 }}
         />
         <a
-            href="https://maps.google.com/?q=Iglesia+de+La+Soledad+San+Jose"
+            href="https://maps.app.goo.gl/iQZQ4UCMEc5zcsUK7"
             target="_blank"
             rel="noopener noreferrer"
         >
