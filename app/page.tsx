@@ -11,19 +11,23 @@ export default function Home() {
   return (
     <main className="bg-[#062923]">
       <div
+        id="top-gradient"
         className="fixed top-0 inset-x-0 h-14 md:h-20 pointer-events-none z-30"
         style={{ background: 'linear-gradient(to bottom, #062923 20%, transparent)' }}
       />
       <div
+        id="bottom-gradient"
         className="fixed bottom-0 inset-x-0 h-14 md:h-20 pointer-events-none z-30"
         style={{ background: 'linear-gradient(to top, #062923 20%, transparent)' }}
       />
 
       <div
+        id="invitation-container"
         className="relative mx-auto"
         style={{ maxWidth: '600px', width: '100%' }}
       >
         <WeddingInvitation
+          id="wedding-invitation"
           name={GUEST_NAME}
           amount={GUEST_AMOUNT}
           className="w-full h-auto block"
@@ -31,6 +35,7 @@ export default function Home() {
 
         {Array.from({ length: SECTIONS }, (_, i) => (
           <motion.div
+            id="section-overlay"
             key={i}
             className="absolute left-0 right-0 pointer-events-none z-10"
             style={{
