@@ -30,9 +30,10 @@
         { "id": "martinez-sandra", "name": "SANDRA MARTÍNEZ", "amount": "1" },
         { "id": "acuna-mora-familia", "name": "FAMILIA ACUÑA MORA", "amount": "4" },
         { "id": "campos-mora-familia", "name": "FAMILIA CAMPOS MORA", "amount": "2" },
-        { "id": "mora-kayeann-familia", "name": "FAMILIA MORA KAYEANN", "amount": "3" },
+        { "id": "mora-ripley-familia", "name": "FAMILIA MORA RIPLEY", "amount": "3" },
         { "id": "rojas-araya-familia", "name": "FAMILIA ROJAS ARAYA", "amount": "5" },
         { "id": "vitoux-mora-familia", "name": "FAMILIA VITOUX MORA", "amount": "2" },
-        { "id": "mora-vargas-familia", "name": "FAMILIA MORA VARGAS", "amount": "4" }
+        { "id": "mora-vargas-familia", "name": "FAMILIA MORA VARGAS", "amount": "4" },
+        { "id": "arias-isabel-maria", "name": "MARIA ISABEL ARIAS", "amount": "1" }
     ]
 }
