@@ -1,8 +1,16 @@
 // app/components/sections/CountdownSection.tsx
 import React, { useEffect, useState } from "react";
 
-const targetDate = new Date("2026-04-18T14:30:00"); // Set your wedding date/time here
+/**
+ * CountdownSection component that displays the time left until the wedding date
+ * It updates every second to show the remaining days, hours, minutes, and seconds
+ */
+const targetDate = new Date("2026-04-18T14:30:00");
 
+/**
+ * Function to calculate the time left until the target date
+ * @returns An object containing days, hours, minutes, and seconds left until the target date
+ */
 const getTimeLeft = () => {
     const now = new Date();
     const diff = targetDate.getTime() - now.getTime();
@@ -15,6 +23,9 @@ const getTimeLeft = () => {
     return { days, hours, minutes, seconds };
 };
 
+/**
+ * Common text style for the countdown numbers and labels
+ */
 const textStyle = {
     fontFamily: "var(--font-cormorant-garamond)",
     fill: "#e5e5e5",
@@ -22,6 +33,10 @@ const textStyle = {
     textAnchor: "middle" as const,
 };
 
+/**
+ * CountdownSection component that displays the time left until the wedding date
+ * It updates every second to show the remaining days, hours, minutes, and seconds
+ */
 const CountdownSection: React.FC = () => {
     const [timeLeft, setTimeLeft] = useState<ReturnType<typeof getTimeLeft> | null>(null);
 
@@ -54,6 +69,7 @@ const CountdownSection: React.FC = () => {
         <g>
             <text
                 xmlSpace="preserve"
+                id="countdown-title"
                 x={153.229}
                 y={857.143}
                 style={{ ...textStyle, fontSize: "32px", fontWeight: 700 }}
@@ -64,6 +80,7 @@ const CountdownSection: React.FC = () => {
                 <g key={item.label}>
                     <text
                         xmlSpace="preserve"
+                        id={`countdown-${item.label.toLowerCase()}`}
                         x={baseX + i * spacing}
                         y={baseY + 30}
                         style={{ ...textStyle, fontSize: "48px", fontWeight: 700 }}
@@ -72,6 +89,7 @@ const CountdownSection: React.FC = () => {
                     </text>
                     <text
                         xmlSpace="preserve"
+                        id={`countdown-${item.label.toLowerCase()}-label`}
                         x={baseX + i * spacing}
                         y={baseY + 62}
                         style={{ ...textStyle, fontSize: "16px", fontWeight: 700 }}

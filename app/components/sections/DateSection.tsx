@@ -1,4 +1,8 @@
 // app/components/sections/DateSection.tsx
+/**
+ * DateSection component that displays the wedding date and a heartfelt message
+ * It uses SVG elements to create a visually appealing design for the date and message
+ */
 const DateSection = () => (
     <>
         <path
