@@ -17,5 +17,5 @@ const sanitizedBase = BASE_URL.trim().replace(/;$/, '').replace(/\/$/, '');
 
 guestsData.guests.forEach(guest => {
   const url = `${sanitizedBase}/${guest.id}`;
-  console.log(`${guest.name}: ${url}`);
+  console.log(`${guest.name}: ${url}, Espacios: ${guest.amount}`);
 });
