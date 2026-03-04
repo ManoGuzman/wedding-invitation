@@ -1,0 +1,15 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPoints": ["app", "scripts"],
+  "entryPointStrategy": "expand",
+  "out": "docs",
+  "plugin": ["typedoc-plugin-markdown"],
+  "tsconfig": "./tsconfig.json",
+  "name": "Wedding Invitation",
+  "includeVersion": true,
+  "excludePrivate": true,
+  "excludeProtected": true,
+  "navigationLinks": {
+    "GitHub": "https://github.com/ManoGuzman/wedding-invitation"
+  }
+}
