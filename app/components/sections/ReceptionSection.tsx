@@ -1,8 +1,10 @@
 // app/components/sections/ReceptionSection.tsx
+
 /**
- * This component is responsible for rendering the reception section of the wedding invitation. It includes the title, location, time, and a link to the map.
- * It is designed to be used within the main invitation component and is styled to match the overall theme of the invitation.
- * @returns 
+ * ReceptionSection component displays the wedding reception details.
+ * Shows the venue name (Tierra Bonanza), location (El Carmen, Guadalupe),
+ * time (4:30pm), and includes a "COMO LLEGAR" button linking to the venue map.
+ * Also displays a decorative image related to the reception venue.
  */
 const ReceptionSection = () => (
     <>

@@ -115,6 +115,9 @@ web_modules/
 .nuxt
 dist
 
+# TypeDoc generated documentation
+/docs
+
 # Gatsby files
 .cache/
 
