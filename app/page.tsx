@@ -3,10 +3,30 @@
 import { motion } from 'framer-motion'
 import WeddingInvitation from './components/WeddingInvitation'
 
+/**
+ * Number of sections in the wedding invitation.
+ * Used for calculating scroll overlay positions.
+ */
 const SECTIONS = 9
+
+/**
+ * Default guest name for the home page (public invitation).
+ * Empty string since no guest is specified.
+ */
 const GUEST_NAME = ""
+
+/**
+ * Default number of guest spots reserved for home page.
+ * Used when no specific guest is identified.
+ */
 const GUEST_AMOUNT = "1"
 
+/**
+ * Home page component displaying the public wedding invitation.
+ * Renders the SVG-based invitation with animated scroll overlays.
+ * 
+ * @returns The main page component with wedding invitation
+ */
 export default function Home() {
   return (
     <main className="bg-[#062923]">

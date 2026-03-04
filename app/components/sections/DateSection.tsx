@@ -1,7 +1,12 @@
 // app/components/sections/DateSection.tsx
+
 /**
- * DateSection component that displays the wedding date and a heartfelt message
- * It uses SVG elements to create a visually appealing design for the date and message
+ * DateSection component displays the wedding date information.
+ * Shows the specific date (18 de Abril, 2026 - SÁBADO), 
+ * a decorative calendar-style element, and an invitation message
+ * inviting guests to celebrate the wedding day.
+ * 
+ * This section follows the HeroSection in the invitation flow.
  */
 const DateSection = () => (
     <>

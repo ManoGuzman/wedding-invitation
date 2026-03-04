@@ -1,7 +1,19 @@
 /**
- * This script reads the guests.json file, encrypts the names using AES-256-CBC,
+ * Encrypts guest names in guests.json for privacy.
+ * 
+ * Reads the guests.json file, encrypts the names using AES-256-CBC algorithm,
  * and saves the encrypted data to guests.encrypted.json in the app/data folder.
- * The IV is also saved in the output file for later decryption.
+ * The IV (Initialization Vector) is also saved in the output file for later decryption.
+ * 
+ * @requires ALGORITHM - Encryption algorithm (e.g., aes-256-cbc)
+ * @requires PASSWORD - Password for key derivation
+ * 
+ * @example
+ * # Set environment variables and run
+ * ALGORITHM=aes-256-cbc PASSWORD=your-secret node encrypt-guests.js
+ * 
+ * Output:
+ * # Names encrypted and saved to app/data/guests.encrypted.json
  */
 import { readFileSync, writeFileSync } from 'fs';
 import { createCipheriv, randomBytes, scryptSync } from 'crypto';
@@ -22,9 +34,10 @@ const guestsPath = path.join(__dirname, '../app/data/guests.json');
 const outputPath = path.join(__dirname, '../app/data/guests.encrypted.json');
 
 /**
- * Encrypt function that takes the original text and returns the encrypted text
- * @param {*} text 
- * @returns Encrypted text in hex format
+ * Encrypts plaintext using AES-256-CBC algorithm.
+ * 
+ * @param {string} text - The plaintext to encrypt
+ * @returns {string} Encrypted text in hex format
  */
 function encrypt(text) {
     const cipher = createCipheriv(algorithm, key, iv);
@@ -32,25 +45,25 @@ function encrypt(text) {
 }
 
 /**
- * Read JSON file and parse it
- * @param {*} filePath 
- * @returns 
+ * Reads and parses a JSON file.
+ * 
+ * @param {string} filePath - Path to the JSON file
+ * @returns {object} Parsed JSON object
  */
 function readJSON(filePath) {
     return JSON.parse(readFileSync(filePath, 'utf8'));
 }
 
 /**
- * Helper function to write JSON data to a file with pretty formatting
- * @param {*} filePath 
- * @param {*} data 
+ * Writes data to a JSON file with pretty formatting (4-space indentation).
+ * 
+ * @param {string} filePath - Path to write the file
+ * @param {object} data - Data to serialize as JSON
  */
 function writeJSON(filePath, data) {
     writeFileSync(filePath, JSON.stringify(data, null, 4));
 }
 
-/** Read the guests.json file, encrypt the names, and save to guests.encrypted.json
- */
 const guestsData = readJSON(guestsPath);
 const encryptedGuests = guestsData.guests.map(guest => ({
     id: guest.id,

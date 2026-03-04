@@ -1,7 +1,10 @@
 // app/components/sections/BackgroundSection.tsx
+
 /**
- * BackgroundSection component that renders the background design for the wedding invitation
- * It uses SVG paths to create a visually appealing background with a specific color and style
+ * BackgroundSection component provides the background styling for the invitation.
+ * Contains decorative SVG paths that create the visual background behind
+ * the invitation content sections, using the primary color #062923.
+ * This section is rendered first to ensure proper layering.
  */
 const BackgroundSection = () => (
     <>

@@ -1,5 +1,21 @@
 /**
- * This script extracts base64-encoded images from the wedding_edit.svg file and saves them as separate PNG files in the public/images directory.
+ * Extracts base64-encoded images from wedding_edit.svg.
+ * 
+ * Reads the wedding_edit.svg file, finds all base64-encoded PNG images,
+ * and saves them as separate PNG files in the public/images directory.
+ * 
+ * @requires public/wedding_edit.svg - Source SVG file containing embedded images
+ * 
+ * @example
+ * # Run the script
+ * node extract-images.js
+ * 
+ * Output:
+ * # Saved: public/images/hero-bg.png
+ * # Saved: public/images/middle-decoration.png
+ * # Saved: public/images/border-decoration.png
+ * # Saved: public/images/bottom-bg.png
+ * # Image extraction complete.
  */ 
 import { readFileSync, mkdirSync, writeFileSync } from 'fs';
 import { dirname } from 'path';
@@ -10,7 +26,10 @@ const imageNames = ['hero-bg', 'middle-decoration', 'border-decoration', 'bottom
 const base64Regex = /data:image\/png;base64,([^"']+)/g;
 
 /**
- * Helper function to ensure the output directory exists and save the file
+ * Ensures the output directory exists and saves the file.
+ * 
+ * @param {string} filename - Full path including filename
+ * @param {Buffer} data - Binary data to write
  */
 function ensureDirAndSave(filename, data) {
   mkdirSync(dirname(filename), { recursive: true });
@@ -19,11 +38,12 @@ function ensureDirAndSave(filename, data) {
 }
 
 /**
- * Function to extract base64 images from the SVG content and save them as PNG files
- * @param {*} svgContent 
- * @param {*} regex 
- * @param {*} names 
- * @param {*} outDir 
+ * Extracts base64 images from SVG content and saves as PNG files.
+ * 
+ * @param {string} svgContent - The SVG file content as string
+ * @param {RegExp} regex - Regular expression to match base64 images
+ * @param {string[]} names - Array of names for the output files
+ * @param {string} outDir - Output directory path
  */
 function extractAndSaveImages(svgContent, regex, names, outDir) {
   let match, index = 0;
@@ -35,9 +55,6 @@ function extractAndSaveImages(svgContent, regex, names, outDir) {
   }
 }
 
-/**
- * Read the SVG file, extract images, and save them
- */
 const svgContent = readFileSync(svgFilePath, 'utf8');
 extractAndSaveImages(svgContent, base64Regex, imageNames, outputDir);
 console.log('Image extraction complete.');

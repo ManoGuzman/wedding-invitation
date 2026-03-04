@@ -1,7 +1,20 @@
 /**
- * This script decrypts the names of guests in the guests.encrypted.json file and saves the decrypted names to guests.decrypted.json.
- * It uses AES-256-CBC encryption with a predefined password and salt to derive the key.
- * The IV is stored in the encrypted JSON file and is used for decryption.
+ * Decrypts guest names from guests.encrypted.json.
+ * 
+ * Reads the guests.encrypted.json file, decrypts the encrypted names using AES-256-CBC
+ * algorithm with the same password and salt used for encryption, and saves the decrypted
+ * data to guests.decrypted.json in the app/data folder.
+ * The IV (Initialization Vector) stored in the encrypted file is used for decryption.
+ * 
+ * @requires ALGORITHM - Encryption algorithm (must match the one used for encryption)
+ * @requires PASSWORD - Password for key derivation (must match the one used for encryption)
+ * 
+ * @example
+ * # Set environment variables and run
+ * ALGORITHM=aes-256-cbc PASSWORD=your-secret node decrypt-guests.js
+ * 
+ * Output:
+ * # Names decrypted and saved to app/data/guests.decrypted.json
  */
 import { readFileSync, writeFileSync } from 'fs';
 import { createDecipheriv, scryptSync } from 'crypto';
@@ -20,29 +33,33 @@ const key = scryptSync(password, salt, keyLength);
 const encryptedPath = path.join(__dirname, '../app/data/guests.encrypted.json');
 const outputPath = path.join(__dirname, '../app/data/guests.decrypted.json');
 
-/** Decrypt function that takes the encrypted text and IV, and returns the decrypted text
- * @param {*} text 
- * @param {*} iv 
- * @returns Decrypted text in utf8 format
+/**
+ * Decrypts ciphertext using AES-256-CBC algorithm.
+ * 
+ * @param {string} text - The encrypted text in hex format
+ * @param {Buffer} iv - The Initialization Vector used during encryption
+ * @returns {string} Decrypted text in UTF-8 format
  */
 function decrypt(text, iv) {
     const decipher = createDecipheriv(algorithm, key, iv);
     return decipher.update(text, 'hex', 'utf8') + decipher.final('utf8');
 }
 
-/** 
- * Read JSON file and parse it
- * @param {*} filePath 
- * @returns 
+/**
+ * Reads and parses a JSON file.
+ * 
+ * @param {string} filePath - Path to the JSON file
+ * @returns {object} Parsed JSON object
  */
 function readJSON(filePath) {
     return JSON.parse(readFileSync(filePath, 'utf8'));
 }
 
-/** 
- * Helper function to write JSON data to a file with pretty formatting
- * @param {*} filePath 
- * @param {*} data 
+/**
+ * Writes data to a JSON file with pretty formatting (4-space indentation).
+ * 
+ * @param {string} filePath - Path to write the file
+ * @param {object} data - Data to serialize as JSON
  */
 function writeJSON(filePath, data) {
     writeFileSync(filePath, JSON.stringify(data, null, 4));

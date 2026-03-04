@@ -1,8 +1,12 @@
 // app/components/sections/DressCodeSection.tsx
+
 /**
- * DressCodeSection component that displays the dress code information for the wedding
- * It uses SVG elements to create a visually appealing design for the dress code details
-    */
+ * DressCodeSection component displays the wedding dress code information.
+ * Shows the dress code (FORMAL) and displays color circles indicating
+ * which colors guests should avoid: Blanco (white), Crema (cream),
+ * Esmeralda (emerald), and Verde oscuro (dark green).
+ * Includes decorative elements and styling.
+ */
 const DressCodeSection = () => (
     <>
         <image
