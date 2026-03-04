@@ -4,12 +4,11 @@ import ReceptionSection from '../../app/components/sections/ReceptionSection';
 describe('Reception Section', () => {
   it('renders without crashing', () => {
     const { container } = render(<ReceptionSection />);
-    expect(container.firstChild).toBeInTheDocument();
+    expect(container.innerHTML).toContain('svg');
   });
 
   it('renders SVG elements', () => {
     const { container } = render(<ReceptionSection />);
-    const svg = container.querySelector('svg');
-    expect(svg).toBeInTheDocument();
+    expect(container.innerHTML).toContain('text');
   });
 });

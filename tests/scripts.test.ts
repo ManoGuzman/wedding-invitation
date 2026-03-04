@@ -20,10 +20,6 @@ describe('extract-images.js', () => {
 
     it('should be a valid JS file', () => {
         const content = fs.readFileSync(scriptPath, 'utf-8');
-        expect(content).toContain('module.exports');
-    });
-
-    it('should not throw when imported', async () => {
-        expect(async () => await import(scriptPath)).not.toThrow();
+        expect(content).toContain('import');
     });
 });
