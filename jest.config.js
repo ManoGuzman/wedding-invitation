@@ -8,7 +8,8 @@ const config = {
   transform: {
     ...tsJestTransformCfg,
   },
-  setupFilesAfterFramework: ["@testing-library/jest-dom"],
+  setupFilesAfterFramework: ["<rootDir>/jest.setup.js"],
+  setupFilesAfterEnv: ["@testing-library/jest-dom"],
 };
 
 export default config;
