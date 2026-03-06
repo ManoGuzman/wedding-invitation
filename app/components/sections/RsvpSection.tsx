@@ -1,3 +1,4 @@
+import { SECTIONS, COLORS, FULL_WHATSAPP_NUMBERS } from "@/app/constants";
 import React from "react";
 
 /**
@@ -18,7 +19,7 @@ interface RsvpSectionProps {
 const RsvpSection: React.FC<RsvpSectionProps> = ({ name, amount }) => {
     const [firstName, ...restName] = name.split(" ");
     const secondName = restName.join(" ");
-    const textPlace = Number(amount) > 1 ? "LUGARES EN" : "LUGAR EN";
+    const textPlace = Number(amount) > 1 ? SECTIONS.RSVP.LUGARES : SECTIONS.RSVP.LUGAR;
 
     return (
         <>
@@ -33,7 +34,7 @@ const RsvpSection: React.FC<RsvpSectionProps> = ({ name, amount }) => {
                     fontVariationSettings: "&quot",
                     textAlign: "center",
                     textAnchor: "middle",
-                    fill: "#e5e5e5",
+                    fill: COLORS.SECONDARY,
                     fillOpacity: 1,
                     strokeWidth: 2.5162,
                     strokeLinecap: "round",
@@ -51,7 +52,7 @@ const RsvpSection: React.FC<RsvpSectionProps> = ({ name, amount }) => {
                         fontStretch: "normal",
                         fontSize: "119.518px",
                         fontFamily: "var(--font-apple-garamond)",
-                        fill: "#e5e5e5",
+                        fill: COLORS.SECONDARY,
                         fillOpacity: 1,
                         strokeWidth: 2.5162,
                     }}
@@ -71,7 +72,7 @@ const RsvpSection: React.FC<RsvpSectionProps> = ({ name, amount }) => {
                     fontVariationSettings: "&quot",
                     textAlign: "center",
                     textAnchor: "middle",
-                    fill: "#e5e5e5",
+                    fill: COLORS.SECONDARY,
                     fillOpacity: 1,
                     strokeWidth: 0.400259,
                     strokeLinecap: "round",
@@ -91,7 +92,7 @@ const RsvpSection: React.FC<RsvpSectionProps> = ({ name, amount }) => {
                         fontFamily: "var(--font-cormorant-garamond)",
                         textAlign: "start",
                         textAnchor: "start",
-                        fill: "#e5e5e5",
+                        fill: COLORS.SECONDARY,
                         fillOpacity: 1,
                         strokeWidth: 0.400259,
                     }}
@@ -111,7 +112,7 @@ const RsvpSection: React.FC<RsvpSectionProps> = ({ name, amount }) => {
                         fontFamily: "var(--font-cormorant-garamond)",
                         textAlign: "start",
                         textAnchor: "start",
-                        fill: "#e5e5e5",
+                        fill: COLORS.SECONDARY,
                         fillOpacity: 1,
                         strokeWidth: 0.400259,
                     }}
@@ -131,7 +132,7 @@ const RsvpSection: React.FC<RsvpSectionProps> = ({ name, amount }) => {
                     fontVariationSettings: "&quot",
                     textAlign: "center",
                     textAnchor: "middle",
-                    fill: "#e5e5e5",
+                    fill: COLORS.SECONDARY,
                     fillOpacity: 1,
                     strokeWidth: 0.400259,
                     strokeLinecap: "round",
@@ -151,7 +152,7 @@ const RsvpSection: React.FC<RsvpSectionProps> = ({ name, amount }) => {
                         fontFamily: "var(--font-cormorant-garamond)",
                         textAlign: "start",
                         textAnchor: "start",
-                        fill: "#e5e5e5",
+                        fill: COLORS.SECONDARY,
                         fillOpacity: 1,
                         strokeWidth: 0.400259,
                     }}
@@ -171,12 +172,12 @@ const RsvpSection: React.FC<RsvpSectionProps> = ({ name, amount }) => {
                         fontFamily: "var(--font-cormorant-garamond)",
                         textAlign: "start",
                         textAnchor: "start",
-                        fill: "#e5e5e5",
+                        fill: COLORS.SECONDARY,
                         fillOpacity: 1,
                         strokeWidth: 0.400259,
                     }}
                 >
-                    {"TU HONOR,"}
+                    {SECTIONS.RSVP.TU_HONOR}
                 </tspan>
             </text>
             <text
@@ -190,7 +191,7 @@ const RsvpSection: React.FC<RsvpSectionProps> = ({ name, amount }) => {
                     fontVariationSettings: "&quot",
                     textAlign: "center",
                     textAnchor: "middle",
-                    fill: "#e5e5e5",
+                    fill: COLORS.SECONDARY,
                     fillOpacity: 1,
                     strokeWidth: 0.475326,
                     strokeLinecap: "round",
@@ -208,12 +209,12 @@ const RsvpSection: React.FC<RsvpSectionProps> = ({ name, amount }) => {
                         fontStretch: "normal",
                         fontSize: "22.5778px",
                         fontFamily: "var(--font-cormorant-garamond)",
-                        fill: "#e5e5e5",
+                        fill: COLORS.SECONDARY,
                         fillOpacity: 1,
                         strokeWidth: 0.475326,
                     }}
                 >
-                    {"RESERVADO"}
+                    {SECTIONS.RSVP.RESERVADO}
                 </tspan>
             </text>
             <text
@@ -235,7 +236,7 @@ const RsvpSection: React.FC<RsvpSectionProps> = ({ name, amount }) => {
                     fontVariationSettings: "&quot",
                     textAlign: "center",
                     textAnchor: "middle",
-                    fill: "#e5e5e5",
+                    fill: COLORS.SECONDARY,
                     fillOpacity: 1,
                     strokeWidth: 1.31725,
                     strokeLinecap: "round",
@@ -258,7 +259,7 @@ const RsvpSection: React.FC<RsvpSectionProps> = ({ name, amount }) => {
                         fontVariantNumeric: "normal",
                         fontVariantEastAsian: "normal",
                         fontVariationSettings: "&quot",
-                        fill: "#e5e5e5",
+                        fill: COLORS.SECONDARY,
                         fillOpacity: 1,
                         strokeWidth: 1.31725,
                     }}
@@ -285,7 +286,7 @@ const RsvpSection: React.FC<RsvpSectionProps> = ({ name, amount }) => {
                     fontVariationSettings: "&quot",
                     textAlign: "center",
                     textAnchor: "middle",
-                    fill: "#e5e5e5",
+                    fill: COLORS.SECONDARY,
                     fillOpacity: 1,
                     strokeWidth: 1.26692,
                     strokeLinecap: "round",
@@ -308,12 +309,12 @@ const RsvpSection: React.FC<RsvpSectionProps> = ({ name, amount }) => {
                         fontVariantNumeric: "normal",
                         fontVariantEastAsian: "normal",
                         fontVariationSettings: "&quot",
-                        fill: "#e5e5e5",
+                        fill: COLORS.SECONDARY,
                         fillOpacity: 1,
                         strokeWidth: 1.26692,
                     }}
                 >
-                    {"Confirma"}
+                    {SECTIONS.RSVP.CONFIRMA}
                 </tspan>
             </text>
             <path
@@ -343,7 +344,7 @@ const RsvpSection: React.FC<RsvpSectionProps> = ({ name, amount }) => {
                     fontVariationSettings: "&quot",
                     textAlign: "center",
                     textAnchor: "middle",
-                    fill: "#e5e5e5",
+                    fill: COLORS.SECONDARY,
                     fillOpacity: 1,
                     strokeWidth: 0.457163,
                     strokeLinecap: "round",
@@ -361,12 +362,12 @@ const RsvpSection: React.FC<RsvpSectionProps> = ({ name, amount }) => {
                         fontStretch: "normal",
                         fontSize: "21.7151px",
                         fontFamily: "var(--font-cormorant-garamond)",
-                        fill: "#e5e5e5",
+                        fill: COLORS.SECONDARY,
                         fillOpacity: 1,
                         strokeWidth: 0.457163,
                     }}
                 >
-                    {"ASISTENCIA"}
+                    {SECTIONS.RSVP.ASISTENCIA}
                 </tspan>
             </text>
             <text
@@ -388,7 +389,7 @@ const RsvpSection: React.FC<RsvpSectionProps> = ({ name, amount }) => {
                     fontVariantEastAsian: "normal",
                     textAlign: "center",
                     textAnchor: "middle",
-                    fill: "#e5e5e5",
+                    fill: COLORS.SECONDARY,
                     fillOpacity: 1,
                     strokeWidth: 0.27068,
                     strokeLinecap: "round",
@@ -410,12 +411,12 @@ const RsvpSection: React.FC<RsvpSectionProps> = ({ name, amount }) => {
                         fontVariantCaps: "normal",
                         fontVariantNumeric: "normal",
                         fontVariantEastAsian: "normal",
-                        fill: "#e5e5e5",
+                        fill: COLORS.SECONDARY,
                         fillOpacity: 1,
                         strokeWidth: 0.27068,
                     }}
                 >
-                    {"Por favor ayudanos confirmando"}
+                    {SECTIONS.RSVP.CONFIRMACION_TEXT[0]}
                 </tspan>
                 <tspan
                     id="rsvp-confirmacion-tspan-2"
@@ -432,12 +433,12 @@ const RsvpSection: React.FC<RsvpSectionProps> = ({ name, amount }) => {
                         fontVariantCaps: "normal",
                         fontVariantNumeric: "normal",
                         fontVariantEastAsian: "normal",
-                        fill: "#e5e5e5",
+                        fill: COLORS.SECONDARY,
                         fillOpacity: 1,
                         strokeWidth: 0.27068,
                     }}
                 >
-                    {"tu asistencia por WhatsApp,"}
+                    {SECTIONS.RSVP.CONFIRMACION_TEXT[1]}
                 </tspan>
                 <tspan
                     id="rsvp-confirmacion-tspan-3"
@@ -454,12 +455,12 @@ const RsvpSection: React.FC<RsvpSectionProps> = ({ name, amount }) => {
                         fontVariantCaps: "normal",
                         fontVariantNumeric: "normal",
                         fontVariantEastAsian: "normal",
-                        fill: "#e5e5e5",
+                        fill: COLORS.SECONDARY,
                         fillOpacity: 1,
                         strokeWidth: 0.27068,
                     }}
                 >
-                    {"a m\xE1s tardar viernes "}
+                    {SECTIONS.RSVP.DEADLINE_PREFIX}
                     <tspan
                         id="rsvp-confirmacion-tspan-3-date"
                         style={{
@@ -471,13 +472,13 @@ const RsvpSection: React.FC<RsvpSectionProps> = ({ name, amount }) => {
                             strokeWidth: 0.27068,
                         }}
                     >
-                        {"20 de marzo"}
+                        {SECTIONS.RSVP.DEADLINE}
                     </tspan>
                 </tspan>
             </text>
             <a
                 id="rsvp-confirmacion-link"
-                href="https://wa.me/50684002683"
+                href={`https://wa.me/${FULL_WHATSAPP_NUMBERS.GROOM}`}
                 target="_blank"
                 rel="noopener noreferrer"
             >
@@ -490,7 +491,7 @@ const RsvpSection: React.FC<RsvpSectionProps> = ({ name, amount }) => {
                     ry={15.819}
                     style={{
                         fontVariationSettings: "&quot",
-                        fill: "#e5e5e5",
+                        fill: COLORS.SECONDARY,
                         fillOpacity: 1,
                         stroke: "none",
                         strokeWidth: 1.55033,
@@ -532,7 +533,7 @@ const RsvpSection: React.FC<RsvpSectionProps> = ({ name, amount }) => {
                             strokeWidth: 0.205688,
                         }}
                     >
-                        {"CONFIRMA AQU\xCD"}
+                        {SECTIONS.RSVP.BUTTON_TEXT}
                     </tspan>
                 </text>
             </a>
@@ -554,7 +555,7 @@ const RsvpSection: React.FC<RsvpSectionProps> = ({ name, amount }) => {
                     fontVariantEastAsian: "normal",
                     textAlign: "center",
                     textAnchor: "middle",
-                    fill: "#e5e5e5",
+                    fill: COLORS.SECONDARY,
                     fillOpacity: 1,
                     strokeWidth: 1.28013,
                     strokeLinecap: "round",
@@ -576,12 +577,12 @@ const RsvpSection: React.FC<RsvpSectionProps> = ({ name, amount }) => {
                         fontVariantCaps: "normal",
                         fontVariantNumeric: "normal",
                         fontVariantEastAsian: "normal",
-                        fill: "#e5e5e5",
+                        fill: COLORS.SECONDARY,
                         fillOpacity: 1,
                         strokeWidth: 1.28013,
                     }}
                 >
-                    {"Gracias"}
+                    {SECTIONS.RSVP.GRACIAS}
                 </tspan>
             </text>
             <path
@@ -619,7 +620,7 @@ const RsvpSection: React.FC<RsvpSectionProps> = ({ name, amount }) => {
                     fontVariationSettings: "&quot",
                     textAlign: "center",
                     textAnchor: "middle",
-                    fill: "#e5e5e5",
+                    fill: COLORS.SECONDARY,
                     fillOpacity: 1,
                     strokeWidth: 0.577924,
                     strokeLinecap: "round",
@@ -642,12 +643,12 @@ const RsvpSection: React.FC<RsvpSectionProps> = ({ name, amount }) => {
                         fontVariantNumeric: "normal",
                         fontVariantEastAsian: "normal",
                         fontVariationSettings: "&quot",
-                        fill: "#e5e5e5",
+                        fill: COLORS.SECONDARY,
                         fillOpacity: 1,
                         strokeWidth: 0.577924,
                     }}
                 >
-                    {"por acompa\xF1arnos"}
+                    {SECTIONS.RSVP.POR_ACOMPAÑARNOS}
                 </tspan>
             </text>
         </>

@@ -8,6 +8,9 @@ const config = {
   transform: {
     ...tsJestTransformCfg,
   },
+  moduleNameMapper: {
+    "^@/(.*)$": "<rootDir>/$1",
+  },
   setupFilesAfterFramework: ["<rootDir>/jest.setup.js"],
   setupFilesAfterEnv: ["@testing-library/jest-dom"],
 };

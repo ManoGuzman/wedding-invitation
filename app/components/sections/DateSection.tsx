@@ -1,3 +1,5 @@
+import { WEDDING_DATE_FORMATTED, COLORS, MESSAGES } from "@/app/constants";
+
 // app/components/sections/DateSection.tsx
 
 /**
@@ -23,7 +25,7 @@ const DateSection = () => (
                 letterSpacing: 0,
                 wordSpacing: "-.486833px",
                 textAnchor: "middle",
-                fill: "#e5e5e5",
+                fill: COLORS.SECONDARY,
                 fillOpacity: 1,
                 strokeWidth: 0.562494,
                 strokeLinecap: "round",
@@ -48,7 +50,7 @@ const DateSection = () => (
                 fontVariantEastAsian: "normal",
                 textAlign: "center",
                 textAnchor: "middle",
-                fill: "#e5e5e5",
+                fill: COLORS.SECONDARY,
                 fillOpacity: 1,
                 strokeWidth: 0.202815,
                 strokeLinecap: "round",
@@ -71,12 +73,12 @@ const DateSection = () => (
                     fontVariantEastAsian: "normal",
                     textAlign: "end",
                     textAnchor: "end",
-                    fill: "#e5e5e5",
+                    fill: COLORS.SECONDARY,
                     fillOpacity: 1,
                     strokeWidth: 0.202815,
                 }}
             >
-                {"Con el coraz\xF3n lleno de amor y gratitud,"}
+                {MESSAGES.INVITATION_TEXT[0]}
             </tspan>
             <tspan
                 x={299.044}
@@ -94,12 +96,12 @@ const DateSection = () => (
                     fontVariantEastAsian: "normal",
                     textAlign: "end",
                     textAnchor: "end",
-                    fill: "#e5e5e5",
+                    fill: COLORS.SECONDARY,
                     fillOpacity: 1,
                     strokeWidth: 0.202815,
                 }}
             >
-                {"los invitamos a celebrar con nosotros"}
+                {MESSAGES.INVITATION_TEXT[1]}
             </tspan>
             <tspan
                 x={299.044}
@@ -117,12 +119,12 @@ const DateSection = () => (
                     fontVariantEastAsian: "normal",
                     textAlign: "end",
                     textAnchor: "end",
-                    fill: "#e5e5e5",
+                    fill: COLORS.SECONDARY,
                     fillOpacity: 1,
                     strokeWidth: 0.202815,
                 }}
             >
-                {"el d\xEDa m\xE1s importante de nuestras vidas."}
+                {MESSAGES.INVITATION_TEXT[2]}
             </tspan>
             <tspan
                 x={299.044}
@@ -140,12 +142,12 @@ const DateSection = () => (
                     fontVariantEastAsian: "normal",
                     textAlign: "end",
                     textAnchor: "end",
-                    fill: "#e5e5e5",
+                    fill: COLORS.SECONDARY,
                     fillOpacity: 1,
                     strokeWidth: 0.202815,
                 }}
             >
-                {"Su presencia ser\xE1 un regalo"}
+                {MESSAGES.INVITATION_TEXT[3]}
             </tspan>
             <tspan
                 x={299.044}
@@ -163,12 +165,12 @@ const DateSection = () => (
                     fontVariantEastAsian: "normal",
                     textAlign: "end",
                     textAnchor: "end",
-                    fill: "#e5e5e5",
+                    fill: COLORS.SECONDARY,
                     fillOpacity: 1,
                     strokeWidth: 0.202815,
                 }}
             >
-                {"inolvidable en nuestra boda."}
+                {MESSAGES.INVITATION_TEXT[4]}
             </tspan>
         </text>
         <text
@@ -181,7 +183,7 @@ const DateSection = () => (
                 fontVariationSettings: "&quot",
                 textAlign: "center",
                 textAnchor: "middle",
-                fill: "#e5e5e5",
+                fill: COLORS.SECONDARY,
                 fillOpacity: 1,
                 strokeWidth: 0.942497,
                 strokeLinecap: "round",
@@ -197,12 +199,12 @@ const DateSection = () => (
                     fontWeight: 600,
                     fontStretch: "normal",
                     fontFamily: "var(--font-cormorant-garamond)",
-                    fill: "#e5e5e5",
+                    fill: COLORS.SECONDARY,
                     fillOpacity: 1,
                     strokeWidth: 0.942497,
                 }}
             >
-                {"18"}
+                {WEDDING_DATE_FORMATTED.DAY}
             </tspan>
         </text>
         <text
@@ -215,7 +217,7 @@ const DateSection = () => (
                 fontVariationSettings: "&quot",
                 textAlign: "center",
                 textAnchor: "middle",
-                fill: "#e5e5e5",
+                fill: COLORS.SECONDARY,
                 fillOpacity: 1,
                 strokeWidth: 0.193413,
                 strokeLinecap: "round",
@@ -231,12 +233,12 @@ const DateSection = () => (
                     fontWeight: 600,
                     fontStretch: "normal",
                     fontFamily: "var(--font-cormorant-garamond)",
-                    fill: "#e5e5e5",
+                    fill: COLORS.SECONDARY,
                     fillOpacity: 1,
                     strokeWidth: 0.193413,
                 }}
             >
-                {"S\xC1BADO"}
+                {WEDDING_DATE_FORMATTED.DAY_OF_WEEK}
             </tspan>
         </text>
         <text
@@ -249,7 +251,7 @@ const DateSection = () => (
                 fontVariationSettings: "&quot",
                 textAlign: "center",
                 textAnchor: "middle",
-                fill: "#e5e5e5",
+                fill: COLORS.SECONDARY,
                 fillOpacity: 1,
                 strokeWidth: 0.193413,
                 strokeLinecap: "round",
@@ -265,12 +267,12 @@ const DateSection = () => (
                     fontWeight: 600,
                     fontStretch: "normal",
                     fontFamily: "var(--font-cormorant-garamond)",
-                    fill: "#e5e5e5",
+                    fill: COLORS.SECONDARY,
                     fillOpacity: 1,
                     strokeWidth: 0.193413,
                 }}
             >
-                {"ABRIL"}
+                {WEDDING_DATE_FORMATTED.MONTH}
             </tspan>
         </text>
         <text
@@ -283,7 +285,7 @@ const DateSection = () => (
                 fontVariationSettings: "&quot",
                 textAlign: "center",
                 textAnchor: "middle",
-                fill: "#e5e5e5",
+                fill: COLORS.SECONDARY,
                 fillOpacity: 1,
                 strokeWidth: 0.210671,
                 strokeLinecap: "round",
@@ -299,12 +301,12 @@ const DateSection = () => (
                     fontWeight: 600,
                     fontStretch: "normal",
                     fontFamily: "var(--font-cormorant-garamond)",
-                    fill: "#e5e5e5",
+                    fill: COLORS.SECONDARY,
                     fillOpacity: 1,
                     strokeWidth: 0.210671,
                 }}
             >
-                {"Te esperamos para"}
+                {MESSAGES.TE_ESPERAMOS}
             </tspan>
             <tspan
                 x={157.264}
@@ -315,12 +317,12 @@ const DateSection = () => (
                     fontWeight: 600,
                     fontStretch: "normal",
                     fontFamily: "var(--font-cormorant-garamond)",
-                    fill: "#e5e5e5",
+                    fill: COLORS.SECONDARY,
                     fillOpacity: 1,
                     strokeWidth: 0.210671,
                 }}
             >
-                {"celebrar nuestra boda el"}
+                {MESSAGES.CELEBRAR_NUESTRA_BODA}
             </tspan>
         </text>
         <path
@@ -328,7 +330,7 @@ const DateSection = () => (
             style={{
                 fontVariationSettings: "&quot",
                 opacity: 0.922662,
-                fill: "#e5e5e5",
+                fill: COLORS.SECONDARY,
                 fillOpacity: 1,
                 stroke: "none",
                 strokeWidth: 1.30641,
