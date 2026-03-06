@@ -1,11 +1,12 @@
 // app/components/sections/CountdownSection.tsx
 import React, { useEffect, useState } from "react";
+import { WEDDING_DATETIME, COLORS } from "@/app/constants";
 
 /**
  * CountdownSection component that displays the time left until the wedding date
  * It updates every second to show the remaining days, hours, minutes, and seconds
  */
-const targetDate = new Date("2026-04-18T14:30:00");
+const targetDate = new Date(WEDDING_DATETIME);
 
 /**
  * Function to calculate the time left until the target date
@@ -28,7 +29,7 @@ const getTimeLeft = () => {
  */
 const textStyle = {
     fontFamily: "var(--font-cormorant-garamond)",
-    fill: "#e5e5e5",
+    fill: COLORS.SECONDARY,
     fillOpacity: 1,
     textAnchor: "middle" as const,
 };
