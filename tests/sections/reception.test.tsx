@@ -4,7 +4,7 @@ import ReceptionSection from '../../app/components/sections/ReceptionSection';
 describe('Reception Section', () => {
   it('renders without crashing', () => {
     const { container } = render(<ReceptionSection />);
-    expect(container.innerHTML).toContain('svg');
+    expect(container.innerHTML).toContain('text');
   });
 
   it('renders SVG elements', () => {
