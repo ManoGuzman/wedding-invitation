@@ -34,6 +34,7 @@
         { "id": "rojas-araya-familia", "name": "FAMILIA ROJAS ARAYA", "amount": "5" },
         { "id": "vitoux-mora-familia", "name": "FAMILIA VITOUX MORA", "amount": "2" },
         { "id": "mora-vargas-familia", "name": "FAMILIA MORA VARGAS", "amount": "4" },
-        { "id": "arias-isabel-maria", "name": "MARIA ISABEL ARIAS", "amount": "1" }
+        { "id": "arias-isabel-maria", "name": "MARIA ISABEL ARIAS", "amount": "1" },
+        { "id": "mora-alejandra", "name": "ALEJANDRA MORA", "amount": "1" }
     ]
 }
