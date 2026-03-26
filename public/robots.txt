@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://boda-gaby-ale.netlify.app/

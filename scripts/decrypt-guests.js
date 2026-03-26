@@ -1,21 +1,3 @@
-/**
- * Decrypts guest names from guests.encrypted.json.
- * 
- * Reads the guests.encrypted.json file, decrypts the encrypted names using AES-256-CBC
- * algorithm with the same password and salt used for encryption, and saves the decrypted
- * data to guests.decrypted.json in the app/data folder.
- * The IV (Initialization Vector) stored in the encrypted file is used for decryption.
- * 
- * @requires ALGORITHM - Encryption algorithm (must match the one used for encryption)
- * @requires PASSWORD - Password for key derivation (must match the one used for encryption)
- * 
- * @example
- * # Set environment variables and run
- * ALGORITHM=aes-256-cbc PASSWORD=your-secret node decrypt-guests.js
- * 
- * Output:
- * # Names decrypted and saved to app/data/guests.decrypted.json
- */
 import { readFileSync, writeFileSync } from 'fs';
 import { createDecipheriv, scryptSync } from 'crypto';
 import path from 'path';

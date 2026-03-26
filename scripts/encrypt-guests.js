@@ -1,20 +1,3 @@
-/**
- * Encrypts guest names in guests.json for privacy.
- * 
- * Reads the guests.json file, encrypts the names using AES-256-CBC algorithm,
- * and saves the encrypted data to guests.encrypted.json in the app/data folder.
- * The IV (Initialization Vector) is also saved in the output file for later decryption.
- * 
- * @requires ALGORITHM - Encryption algorithm (e.g., aes-256-cbc)
- * @requires PASSWORD - Password for key derivation
- * 
- * @example
- * # Set environment variables and run
- * ALGORITHM=aes-256-cbc PASSWORD=your-secret node encrypt-guests.js
- * 
- * Output:
- * # Names encrypted and saved to app/data/guests.encrypted.json
- */
 import { readFileSync, writeFileSync } from 'fs';
 import { createCipheriv, randomBytes, scryptSync } from 'crypto';
 import path from 'path';
