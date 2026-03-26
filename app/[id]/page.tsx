@@ -42,7 +42,6 @@ export default function InvitePage({ params }: InvitePageProps) {
     );
 
     if (!guest) {
-        console.log(`Guest with id "${id}" not found.`);
         return <div>Invitado no encontrado</div>;
     }
 
