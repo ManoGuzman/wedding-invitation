@@ -1,22 +1,3 @@
-/**
- * Extracts base64-encoded images from wedding_edit.svg.
- * 
- * Reads the wedding_edit.svg file, finds all base64-encoded PNG images,
- * and saves them as separate PNG files in the public/images directory.
- * 
- * @requires public/wedding_edit.svg - Source SVG file containing embedded images
- * 
- * @example
- * # Run the script
- * node extract-images.js
- * 
- * Output:
- * # Saved: public/images/hero-bg.png
- * # Saved: public/images/middle-decoration.png
- * # Saved: public/images/border-decoration.png
- * # Saved: public/images/bottom-bg.png
- * # Image extraction complete.
- */ 
 import { readFileSync, mkdirSync, writeFileSync } from 'fs';
 import { dirname } from 'path';
 
