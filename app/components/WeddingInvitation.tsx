@@ -1,7 +1,6 @@
 // app/components/WeddingInvitation.tsx
 "use client";
 
-import type { SVGProps } from "react";
 import dynamic from "next/dynamic";
 import BackgroundSection from "./sections/BackgroundSection";
 import HeroSection from "./sections/HeroSection";
@@ -21,9 +20,11 @@ const DateSection = dynamic(() => import("./sections/DateSection"));
  * The component takes in the guest's name and the number of attendees as props, which are passed down to the RSVP section for personalized display.
  * The SVG is designed to be responsive and visually appealing, with various sections styled to match the overall theme of the invitation.
  */
-interface WeddingInvitationProps extends SVGProps<SVGSVGElement> {
+interface WeddingInvitationProps {
     name: string;
     amount: string;
+    id?: string;
+    className?: string;
 }
 
 /**
@@ -36,19 +37,20 @@ interface WeddingInvitationProps extends SVGProps<SVGSVGElement> {
 const WeddingInvitation = ({
     name,
     amount,
-    ...props
+    id,
+    className,
 }: WeddingInvitationProps) => (
     <svg
-        id="wedding-invitation"
+        id={id || "wedding-invitation"}
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
         xmlSpace="preserve"
         viewBox="0 0 314.854 3543.78"
         width="100%"
-        height="auto"
+        preserveAspectRatio="xMidYMid meet"
         overflow="hidden"
+        className={className}
         style={{ display: "block", maxWidth: "100%" }}
-        {...props}
     >
         <SvgDefs />
         <g>
