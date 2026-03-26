@@ -1,5 +1,5 @@
 // app/components/sections/CountdownSection.tsx
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import { WEDDING_DATETIME, COLORS } from "@/app/constants";
 
 /**
@@ -34,16 +34,17 @@ const textStyle = {
     textAnchor: "middle" as const,
 };
 
+const COUNTDOWN_INITIAL = { days: 0, hours: 0, minutes: 0, seconds: 0 };
+
 /**
  * CountdownSection component that displays the time left until the wedding date
  * It updates every second to show the remaining days, hours, minutes, and seconds
  */
 const CountdownSection: React.FC = () => {
-    const [timeLeft, setTimeLeft] =
-        useState<ReturnType<typeof getTimeLeft>>(getTimeLeft());
+    const [timeLeft, setTimeLeft] = useState(COUNTDOWN_INITIAL);
 
     useEffect(() => {
-        const timer = setInterval(() => {
+        const updateTime = () => {
             const remaining = getTimeLeft();
             setTimeLeft(remaining);
 
@@ -55,17 +56,24 @@ const CountdownSection: React.FC = () => {
             ) {
                 clearInterval(timer);
             }
-        }, 1000);
+        };
+
+        const timer = setInterval(updateTime, 1000);
+
+        updateTime();
 
         return () => clearInterval(timer);
     }, []);
 
-    const values = [
-        { label: "Días", value: timeLeft.days },
-        { label: "Horas", value: timeLeft.hours },
-        { label: "Minutos", value: timeLeft.minutes },
-        { label: "Segundos", value: timeLeft.seconds },
-    ];
+    const values = useMemo(
+        () => [
+            { label: "Días", value: timeLeft.days },
+            { label: "Horas", value: timeLeft.hours },
+            { label: "Minutos", value: timeLeft.minutes },
+            { label: "Segundos", value: timeLeft.seconds },
+        ],
+        [timeLeft]
+    );
 
     const baseX = 62.229;
     const baseY = 874.257;
