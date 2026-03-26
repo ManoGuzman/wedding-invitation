@@ -39,28 +39,33 @@ const textStyle = {
  * It updates every second to show the remaining days, hours, minutes, and seconds
  */
 const CountdownSection: React.FC = () => {
-    const [timeLeft, setTimeLeft] = useState<ReturnType<typeof getTimeLeft> | null>(null);
+    const [timeLeft, setTimeLeft] =
+        useState<ReturnType<typeof getTimeLeft>>(getTimeLeft());
 
     useEffect(() => {
         const timer = setInterval(() => {
-            setTimeLeft(getTimeLeft());
+            const remaining = getTimeLeft();
+            setTimeLeft(remaining);
+
+            if (
+                remaining.days <= 0 &&
+                remaining.hours <= 0 &&
+                remaining.minutes <= 0 &&
+                remaining.seconds <= 0
+            ) {
+                clearInterval(timer);
+            }
         }, 1000);
+
         return () => clearInterval(timer);
     }, []);
 
-    const values = timeLeft
-        ? [
-            { label: "Días", value: timeLeft.days },
-            { label: "Horas", value: timeLeft.hours },
-            { label: "Minutos", value: timeLeft.minutes },
-            { label: "Segundos", value: timeLeft.seconds },
-        ]
-        : [
-            { label: "Días", value: "--" },
-            { label: "Horas", value: "--" },
-            { label: "Minutos", value: "--" },
-            { label: "Segundos", value: "--" },
-        ];
+    const values = [
+        { label: "Días", value: timeLeft.days },
+        { label: "Horas", value: timeLeft.hours },
+        { label: "Minutos", value: timeLeft.minutes },
+        { label: "Segundos", value: timeLeft.seconds },
+    ];
 
     const baseX = 62.229;
     const baseY = 874.257;
