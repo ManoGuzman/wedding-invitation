@@ -20,7 +20,12 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/invitation/*": ["./src/invitation/*"],
+      "@/guests/*": ["./src/guests/*"],
+      "@/ceremony/*": ["./src/ceremony/*"],
+      "@/venue/*": ["./src/venue/*"],
+      "@/rsvp/*": ["./src/rsvp/*"],
+      "@/shared/*": ["./src/_shared/*"]
     }
   },
   "include": [
