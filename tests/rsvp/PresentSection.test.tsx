@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import PresentSection from '../../app/components/sections/PresentSection';
+import PresentSection from '@/rsvp/PresentSection';
 
 describe('Present Section', () => {
   it('renders without crashing', () => {

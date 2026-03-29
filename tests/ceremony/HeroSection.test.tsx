@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import HeroSection from '../../app/components/sections/HeroSection';
+import HeroSection from '@/ceremony/HeroSection';
 
 describe('Hero Section', () => {
   it('renders without crashing', () => {

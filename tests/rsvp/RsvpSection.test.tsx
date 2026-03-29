@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import RsvpSection from '../../app/components/sections/RsvpSection';
+import RsvpSection from '@/rsvp/RsvpSection';
 
 describe('Rsvp Section', () => {
   it('renders without crashing', () => {

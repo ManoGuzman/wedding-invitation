@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import DressCodeSection from '../../app/components/sections/DressCodeSection';
+import DressCodeSection from '@/venue/DressCodeSection';
 
 describe('Dress Code Section', () => {
   it('renders without crashing', () => {

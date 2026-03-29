@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import CeremonySection from '../../app/components/sections/CeremonySection';
+import CeremonySection from '@/ceremony/CeremonySection';
 
 describe('Ceremony Section', () => {
   it('renders without crashing', () => {

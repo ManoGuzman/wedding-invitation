@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import DateSection from '../../app/components/sections/DateSection';
+import DateSection from '@/ceremony/DateSection';
 
 describe('Date Section', () => {
   it('renders without crashing', () => {

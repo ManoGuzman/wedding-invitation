@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import ReceptionSection from '../../app/components/sections/ReceptionSection';
+import ReceptionSection from '@/venue/ReceptionSection';
 
 describe('Reception Section', () => {
   it('renders without crashing', () => {

@@ -12,7 +12,7 @@ describe('Dummy test suite', () => {
 });
 
 describe('extract-images.js', () => {
-    const scriptPath = path.resolve(__dirname, '../scripts/extract-images.js');
+    const scriptPath = path.resolve(__dirname, '../../src/_shared/extract-images.js');
 
     it('should exist', () => {
         expect(fs.existsSync(scriptPath)).toBe(true);
