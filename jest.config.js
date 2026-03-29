@@ -16,6 +16,7 @@ const config = {
     "^@/rsvp/(.*)$": "<rootDir>/src/rsvp/$1",
     "^@/shared/(.*)$": "<rootDir>/src/_shared/$1",
     "^@/(.*)$": "<rootDir>/src/$1",
+    "\\.(png|jpg|jpeg|gif|webp|avif|svg|ico)$": "<rootDir>/tests/__mocks__/fileMock.js",
   },
   setupFilesAfterEnv: ["@testing-library/jest-dom"],
 };
