@@ -8,7 +8,7 @@ const base64Regex = /data:image\/png;base64,([^"']+)/g;
 
 /**
  * Ensures the output directory exists and saves the file.
- * 
+ *
  * @param {string} filename - Full path including filename
  * @param {Buffer} data - Binary data to write
  */
@@ -20,7 +20,7 @@ function ensureDirAndSave(filename, data) {
 
 /**
  * Extracts base64 images from SVG content and saves as PNG files.
- * 
+ *
  * @param {string} svgContent - The SVG file content as string
  * @param {RegExp} regex - Regular expression to match base64 images
  * @param {string[]} names - Array of names for the output files
