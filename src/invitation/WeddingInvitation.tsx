@@ -1,18 +1,20 @@
-// app/components/WeddingInvitation.tsx
 "use client";
 
 import dynamic from "next/dynamic";
-import BackgroundSection from "./sections/BackgroundSection";
-import HeroSection from "./sections/HeroSection";
 
-const SvgDefs = dynamic(() => import("./sections/SvgDefs"));
-const CeremonySection = dynamic(() => import("./sections/CeremonySection"));
-const ReceptionSection = dynamic(() => import("./sections/ReceptionSection"));
-const DressCodeSection = dynamic(() => import("./sections/DressCodeSection"));
-const PresentSection = dynamic(() => import("./sections/PresentSection"));
-const RsvpSection = dynamic(() => import("./sections/RsvpSection"));
-const CountdownSection = dynamic(() => import("./sections/CountdownSection"));
-const DateSection = dynamic(() => import("./sections/DateSection"));
+const SvgAssets = dynamic(() => import("@/shared/SvgAssets"));
+
+const CeremonySection = dynamic(() => import("@/ceremony/CeremonySection"));
+const CountdownSection = dynamic(() => import("@/ceremony/CountdownSection"));
+const DateSection = dynamic(() => import("@/ceremony/DateSection"));
+const HeroSection = dynamic(() => import("@/ceremony/HeroSection"));
+
+const BackgroundSection = dynamic(() => import("@/venue/BackgroundSection"));
+const ReceptionSection = dynamic(() => import("@/venue/ReceptionSection"));
+const DressCodeSection = dynamic(() => import("@/venue/DressCodeSection"));
+
+const PresentSection = dynamic(() => import("@/rsvp/PresentSection"));
+const RsvpSection = dynamic(() => import("@/rsvp/RsvpSection"));
 
 /**
  * WeddingInvitation component renders the entire wedding invitation as an SVG.
@@ -52,7 +54,7 @@ const WeddingInvitation = ({
         className={className}
         style={{ display: "block", maxWidth: "100%" }}
     >
-        <SvgDefs />
+        <SvgAssets />
         <g>
             <BackgroundSection />
             <HeroSection />
