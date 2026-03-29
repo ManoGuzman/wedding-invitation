@@ -4,7 +4,7 @@ import { dirname, join } from 'path';
 import 'dotenv/config';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const guestsData = JSON.parse(readFileSync(join(__dirname, '../app/data/guests.json'), 'utf-8'));
+const guestsData = JSON.parse(readFileSync(join(__dirname, 'guests.json'), 'utf-8'));
 
 const BASE_URL = process.env.NETLIFY_URL;
 

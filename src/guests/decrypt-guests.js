@@ -12,12 +12,12 @@ const salt = 'salt';
 const keyLength = 32;
 const key = scryptSync(password, salt, keyLength);
 
-const encryptedPath = path.join(__dirname, '../app/data/guests.encrypted.json');
-const outputPath = path.join(__dirname, '../app/data/guests.decrypted.json');
+const encryptedPath = path.join(__dirname, 'guests.encrypted.json');
+const outputPath = path.join(__dirname, 'guests.decrypted.json');
 
 /**
  * Decrypts ciphertext using AES-256-CBC algorithm.
- * 
+ *
  * @param {string} text - The encrypted text in hex format
  * @param {Buffer} iv - The Initialization Vector used during encryption
  * @returns {string} Decrypted text in UTF-8 format
@@ -29,7 +29,7 @@ function decrypt(text, iv) {
 
 /**
  * Reads and parses a JSON file.
- * 
+ *
  * @param {string} filePath - Path to the JSON file
  * @returns {object} Parsed JSON object
  */
@@ -39,7 +39,7 @@ function readJSON(filePath) {
 
 /**
  * Writes data to a JSON file with pretty formatting (4-space indentation).
- * 
+ *
  * @param {string} filePath - Path to write the file
  * @param {object} data - Data to serialize as JSON
  */
@@ -60,4 +60,4 @@ writeJSON(outputPath, {
     guests: decryptedGuests
 });
 
-console.log('Names decrypted and saved to app/data/guests.decrypted.json');
+console.log('Names decrypted and saved to src/guests/guests.decrypted.json');

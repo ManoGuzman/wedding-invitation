@@ -13,12 +13,12 @@ const keyLength = 32;
 const key = scryptSync(password, salt, keyLength);
 const iv = randomBytes(16);
 
-const guestsPath = path.join(__dirname, '../app/data/guests.json');
-const outputPath = path.join(__dirname, '../app/data/guests.encrypted.json');
+const guestsPath = path.join(__dirname, 'guests.json');
+const outputPath = path.join(__dirname, 'guests.encrypted.json');
 
 /**
  * Encrypts plaintext using AES-256-CBC algorithm.
- * 
+ *
  * @param {string} text - The plaintext to encrypt
  * @returns {string} Encrypted text in hex format
  */
@@ -29,7 +29,7 @@ function encrypt(text) {
 
 /**
  * Reads and parses a JSON file.
- * 
+ *
  * @param {string} filePath - Path to the JSON file
  * @returns {object} Parsed JSON object
  */
@@ -39,7 +39,7 @@ function readJSON(filePath) {
 
 /**
  * Writes data to a JSON file with pretty formatting (4-space indentation).
- * 
+ *
  * @param {string} filePath - Path to write the file
  * @param {object} data - Data to serialize as JSON
  */
@@ -59,4 +59,4 @@ writeJSON(outputPath, {
     guests: encryptedGuests
 });
 
-console.log('Names encrypted and saved to app/data/guests.encrypted.json');
+console.log('Names encrypted and saved to src/guests/guests.encrypted.json');
