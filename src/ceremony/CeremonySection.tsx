@@ -6,6 +6,7 @@ import { SECTIONS, COLORS } from "@/invitation/invitation.constants";
  * The component uses SVG elements to create a visually appealing design for the ceremony information
  */
 const CeremonySection = () => (
+    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
     <g>
         <text
             xmlSpace="preserve"
@@ -297,6 +298,7 @@ const CeremonySection = () => (
                 </tspan>
             </text> </a>
     </g>
+    </svg>
 );
 
 export default CeremonySection;

@@ -22,7 +22,7 @@ const RsvpSection: React.FC<RsvpSectionProps> = ({ name, amount }) => {
     const textPlace = Number(amount) > 1 ? SECTIONS.RSVP.LUGARES : SECTIONS.RSVP.LUGAR;
 
     return (
-        <>
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
             <text
                 id="rsvp-amount"
                 xmlSpace="preserve"
@@ -651,7 +651,7 @@ const RsvpSection: React.FC<RsvpSectionProps> = ({ name, amount }) => {
                     {SECTIONS.RSVP.POR_ACOMPAÑARNOS}
                 </tspan>
             </text>
-        </>
+        </svg>
     );
 };
 

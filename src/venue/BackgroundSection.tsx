@@ -5,7 +5,7 @@
  * This section is rendered first to ensure proper layering.
  */
 const BackgroundSection = () => (
-    <>
+    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
         <path
             id="background"
             d="M0 1693.956h314.854V3543.78H0z"
@@ -54,7 +54,7 @@ const BackgroundSection = () => (
                 strokeWidth: 5.87002,
             }}
         />
-    </>
+    </svg>
 );
 
 export default BackgroundSection;

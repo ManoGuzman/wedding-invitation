@@ -9,7 +9,7 @@ import heroBg from "../_shared/assets/images/hero-bg.png";
  * This is the first visible section when the invitation loads.
  */
 const HeroSection = () => (
-    <>
+    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
         <image
             id="image0"
             xlinkHref={heroBg.src}
@@ -240,7 +240,7 @@ const HeroSection = () => (
                 {WEDDING_DATE}
             </tspan>
         </text>
-    </>
+    </svg>
 );
 
 export default HeroSection;

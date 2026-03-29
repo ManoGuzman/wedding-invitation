@@ -80,6 +80,7 @@ const CountdownSection: React.FC = () => {
     const spacing = 60;
 
     return (
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
         <g>
             <text
                 xmlSpace="preserve"
@@ -113,6 +114,7 @@ const CountdownSection: React.FC = () => {
                 </g>
             ))}
         </g>
+        </svg>
     );
 };
 

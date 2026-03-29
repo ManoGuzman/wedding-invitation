@@ -8,7 +8,7 @@ import middleDecoration from "../_shared/assets/images/middle-decoration.png";
  * Also displays a decorative image related to the reception venue.
  */
 const ReceptionSection = () => (
-    <>
+    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
         <text
             id="reception-title"
             xmlSpace="preserve"
@@ -214,7 +214,7 @@ const ReceptionSection = () => (
             y={1582.941}
             preserveAspectRatio="none"
         />
-    </>
+    </svg>
 );
 
 export default ReceptionSection;

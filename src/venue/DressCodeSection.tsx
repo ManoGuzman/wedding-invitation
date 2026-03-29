@@ -9,7 +9,7 @@ import borderDecoration from "../_shared/assets/images/border-decoration.png";
  * Includes decorative elements and styling.
  */
 const DressCodeSection = () => (
-    <>
+    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
         <image
             id="dress-code-image"
             xlinkHref={borderDecoration.src}
@@ -401,7 +401,7 @@ const DressCodeSection = () => (
                 {SECTIONS.DRESS_CODE.COLORS.WHITE}
             </tspan>
         </text>
-    </>
+    </svg>
 );
 
 export default DressCodeSection;
