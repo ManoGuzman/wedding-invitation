@@ -1,3 +1,4 @@
+import React from 'react';
 import { render, screen } from '@testing-library/react';
 
 jest.mock('framer-motion', () => {
@@ -11,15 +12,15 @@ jest.mock('framer-motion', () => {
     ];
     return {
         motion: new Proxy({}, {
-            get: (_target, tag) => (props) => {
+            get: (_target: object, tag: string) => (props: Record<string, unknown>) => {
                 const { children, ...rest } = props;
-                const filteredProps = {};
+                const filteredProps: Record<string, unknown> = {};
                 for (const [key, value] of Object.entries(rest)) {
                     if (!motionPropsToFilter.includes(key)) {
                         filteredProps[key] = value;
                     }
                 }
-                return require('react').createElement(tag, filteredProps, children);
+                return React.createElement(tag as keyof JSX.IntrinsicElements, filteredProps, children);
             },
         }),
     };

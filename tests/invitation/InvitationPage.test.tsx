@@ -20,7 +20,7 @@ jest.mock('framer-motion', () => {
                         filteredProps[key] = value;
                     }
                 }
-                return require('react').createElement(tag, filteredProps, children);
+                return React.createElement(tag, filteredProps, children);
             },
         }),
     };
