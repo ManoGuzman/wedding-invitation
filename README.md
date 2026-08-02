@@ -66,7 +66,7 @@
 
 A production-grade digital wedding invitation for the wedding of **Gabriela Hernández** and **Alejandro Mora** on **April 18, 2026** in Costa Rica.
 
-The invitation is a scrollable, SVG-based web page deployed on Netlify. The entire design is rendered as a single inline SVG composed from React components, preserving pixel-perfect fidelity from the original vector design. Each of the 35 guests receives a unique personalized URL (e.g. `/hernandez-familia`) that shows their name and reserved seat count.
+The invitation is a scrollable, SVG-based web page deployed on Netlify. The entire design is rendered as a single inline SVG composed from React components, preserving pixel-perfect fidelity from the original vector design. Each of the 36 guests receives a unique personalized URL (e.g. `/hernandez-familia`) that shows their name and reserved seat count.
 
 Key features:
 - **Personalized per-guest invitations** via dynamic Next.js routes and a `guests.json` registry
@@ -101,7 +101,7 @@ Key features:
 
 ### Prerequisites
 
-- **Node.js** 20 or 22
+- **Node.js** 22 or 24
 - **pnpm** (used as the package manager)
 
 ```sh
@@ -136,7 +136,7 @@ npm install -g pnpm
    ```sh
    pnpm dev
    ```
-   Open [http://localhost:3000](http://localhost:3000) to see the generic (non-personalized) invitation, or [http://localhost:3000/\<guest-id\>](http://localhost:3000) for a personalized one using an ID from `app/data/guests.json`.
+   Open [http://localhost:3000](http://localhost:3000) to see the generic (non-personalized) invitation, or [http://localhost:3000/\<guest-id\>](http://localhost:3000) for a personalized one using an ID from `src/guests/guests.json`.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -154,7 +154,7 @@ pnpm start     # Start production server
 pnpm lint      # Run ESLint
 pnpm lint:fix  # Run ESLint with auto-fix
 pnpm test      # Run Jest test suite
-pnpm docs      # Generate TypeDoc documentation to docs/
+pnpm docs      # Generate TypeDoc documentation to docs/ (currently broken — typedoc.json references a removed scripts/ entrypoint)
 ```
 
 ### Guest link generation
@@ -162,16 +162,16 @@ pnpm docs      # Generate TypeDoc documentation to docs/
 Generate personalized Netlify URLs for all guests (requires `NETLIFY_URL` in `.env`):
 
 ```sh
-node scripts/generateLinks.js
+node src/guests/generateLinks.js
 ```
 
 ### Guest list encryption / decryption
 
-Encrypt `app/data/guests.json` before committing sensitive data:
+Encrypt `src/guests/guests.json` before committing sensitive data:
 
 ```sh
-node scripts/encrypt-guests.js
-node scripts/decrypt-guests.js
+node src/guests/encrypt-guests.js
+node src/guests/decrypt-guests.js
 ```
 
 ### Extracting images from the master SVG
@@ -179,15 +179,15 @@ node scripts/decrypt-guests.js
 If you update `public/wedding_edit.svg`, re-extract the embedded PNG images:
 
 ```sh
-node scripts/extract-images.js
+node src/_shared/extract-images.js
 ```
 
 ### Adding or editing guests
 
-Edit `app/data/guests.json`. Each entry has the shape:
+Edit `src/guests/guests.json`. Each entry has the shape:
 
 ```json
-{ "id": "hernandez-familia", "name": "FAMILIA HERNÁNDEZ", "amount": 4 }
+{ "id": "hernandez-familia", "name": "FAMILIA HERNÁNDEZ", "amount": "4" }
 ```
 
 - `id` — URL slug (becomes the route `/[id]`)
@@ -211,7 +211,7 @@ Edit `app/data/guests.json`. Each entry has the shape:
 - [x] WhatsApp RSVP button
 - [x] Guest link generator script
 - [x] AES-256-CBC guest list encryption scripts
-- [x] GitHub Actions CI (lint → test → build on Node 20 & 22)
+- [x] GitHub Actions CI (lint → test → build on Node 22 & 24)
 - [x] TypeDoc API documentation
 - [ ] Add app screenshot to README
 - [ ] RSVP response tracking (store confirmations server-side)
